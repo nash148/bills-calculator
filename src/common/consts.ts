@@ -4,12 +4,12 @@ export const TENANTS_DETAILS: ITenantsDetails = {
   'אחינועם': {
     fields: [
       {
-        label: 'חשבון קודם',
+        label: 'מונה קודם',
         name: 'firstPrevBill',
         value: 0
       },
       {
-        label: 'חשבון נוכחי',
+        label: 'מונה נוכחי',
         name: 'firstCurrBill',
         value: 0
       }
@@ -20,12 +20,12 @@ export const TENANTS_DETAILS: ITenantsDetails = {
   'חיים': {
     fields: [
       {
-        label: 'חשבון קודם',
+        label: 'מונה קודם',
         name: 'secondPrevBill',
         value: 0
       },
       {
-        label: 'חשבון נוכחי',
+        label: 'מונה נוכחי',
         name: 'secondCurrBill',
         value: 0
       }
@@ -36,12 +36,12 @@ export const TENANTS_DETAILS: ITenantsDetails = {
   'הדר': {
     fields: [
       {
-        label: 'חשבון קודם',
+        label: 'מונה קודם',
         name: 'thirdPrevBill',
         value: 0
       },
       {
-        label: 'חשבון נוכחי',
+        label: 'מונה נוכחי',
         name: 'thirdCurrBill',
         value: 0
       }
