@@ -5,9 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ShowerIcon from '@mui/icons-material/Shower';
 import GenericForm from '../../../components/GenericForm';
-import { TENANTS_DETAILS } from '../../../common/consts';
-import { ITenantsDetails, ITenant } from '../../../common/types';
-import { BIG_RATE, SMALL_RATE, NUM_OF_CHEAP_CM_PER_PERSON } from './consts';
+import { ITenantsDetails } from '../../../common/types';
 
 
 interface IProps {

@@ -6,8 +6,6 @@ import Typography from '@mui/material/Typography';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import GenericForm from '../../../components/GenericForm';
 import { ITenantsDetails } from '../../../common/types';
-import { TENANTS_DETAILS } from '../../../common/consts';
-import { PRICE_PER_KW, FIXED_CHARGE } from './consts';
 
 
 interface IProps {
