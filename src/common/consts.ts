@@ -17,7 +17,7 @@ export const TENANTS_DETAILS: ITenantsDetails = {
     result: 0,
     numOfPersons: 1,
   },
-  'חיים': {
+  'אוריאל': {
     fields: [
       {
         label: 'מונה קודם',
@@ -33,7 +33,7 @@ export const TENANTS_DETAILS: ITenantsDetails = {
     result: 0,
     numOfPersons: 2
   },
-  'הדר': {
+  'ליהי': {
     fields: [
       {
         label: 'מונה קודם',
