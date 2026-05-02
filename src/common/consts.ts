@@ -31,7 +31,7 @@ export const TENANTS_DETAILS: ITenantsDetails = {
       }
     ],
     result: 0,
-    numOfPersons: 2
+    numOfPersons: 3
   },
   'ליהי': {
     fields: [
