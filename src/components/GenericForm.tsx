@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -10,48 +10,48 @@ interface IProps {
 }
 
 export default function GenericForm(props: IProps) {
-  const { 
+  const {
     formDetails,
     // extraField,
-   } = props;
+  } = props;
 
   return (
     <Grid container direction={"column"} spacing={2}>
-    {
-      Object.keys(formDetails).map(curr_tenant => (
-        <Grid item key={curr_tenant}>
-          <Grid container direction={'row'} spacing={2} alignItems="start">
-            <Grid item xs={12}>
-              <Typography 
-                component="h5" 
-                gutterBottom
-                borderTop={"solid 1px rgb(192,192,192,192)"}
-              >
-                {formDetails[curr_tenant].result} - {curr_tenant}
-              </Typography>
+      {
+        Object.keys(formDetails).map(curr_tenant => (
+          <Grid item key={curr_tenant}>
+            <Grid container direction={'row'} spacing={2} alignItems="start">
+              <Grid item xs={12}>
+                <Typography
+                  component="h5"
+                  gutterBottom
+                  borderTop={"solid 1px rgb(192,192,192,192)"}
+                >
+                  {formDetails[curr_tenant].result} - {curr_tenant}
+                </Typography>
+              </Grid>
+
+              {
+                formDetails[curr_tenant].fields.map(curr_field => (
+                  <Grid key={JSON.stringify(curr_field)} item xs={6}>
+                    <TextField
+                      required
+                      fullWidth
+                      type="number"
+                      label={curr_field.label}
+                      name={curr_field.name}
+                      size='small'
+                    />
+                  </Grid>
+                ))
+              }
+
+
             </Grid>
-
-            {
-              formDetails[curr_tenant].fields.map(curr_field => (
-                <Grid key={JSON.stringify(curr_field)} item xs={6}>
-                  <TextField
-                    required
-                    fullWidth
-                    type="number"
-                    label={curr_field.label}
-                    name={curr_field.name}
-                    size='small'
-                  />
-                </Grid>
-              ))
-            }
-
-
           </Grid>
-        </Grid>    
         ))
       }
-        {/* <Grid item xs={12} marginTop={'10px'} borderTop={"solid 1px rgb(192,192,192,192)"}>
+      {/* <Grid item xs={12} marginTop={'10px'} borderTop={"solid 1px rgb(192,192,192,192)"}>
           <TextField
             required
             fullWidth
@@ -61,6 +61,6 @@ export default function GenericForm(props: IProps) {
             size='small'
           />
         </Grid> */}
-      </Grid>
+    </Grid>
   )
 }

@@ -29,7 +29,7 @@ export default function HomePage() {
   };
 
   const calculateElectricPerPerson = (prevBill: number, currBill: number): number => {
-    const tmp = currBill - prevBill 
+    const tmp = currBill - prevBill
     if (tmp <= 0) return 0
     return tmp * PRICE_PER_KW + FIXED_CHARGE
   }
@@ -39,7 +39,7 @@ export default function HomePage() {
     let sumCM: number = currBill - prevBill;
 
     if (sumCM <= 0) return 0;
-    
+
     if (tenant.numOfPersons > 0) {
       const sumOfCheapCM = tenant.numOfPersons * NUM_OF_CHEAP_CM_PER_PERSON
 
@@ -66,30 +66,30 @@ export default function HomePage() {
     for (let curr_tenant of Object.keys(tenantsDetails)) {
       const prevBill = data.get(tenantsDetails[curr_tenant].fields[0].name)
       const currBill = data.get(tenantsDetails[curr_tenant].fields[1].name)
-  
+
       if (prevBill && currBill) {
         let result = 0;
         if (billType === "water") {
           result = parseFloat(calculateWaterPerPerson(
-            tenantsDetails[curr_tenant], 
-            parseInt(prevBill as string), 
+            tenantsDetails[curr_tenant],
+            parseInt(prevBill as string),
             parseInt(currBill as string)).toFixed(2))
         } else {
           result = parseFloat(calculateElectricPerPerson(
-            parseInt(prevBill as string), 
+            parseInt(prevBill as string),
             parseInt(currBill as string)).toFixed(2))
         }
 
-        console.log({ 
+        console.log({
           name: curr_tenant,
           prev: prevBill,
           curr: currBill,
           result: result
         })
-        
+
         newData[curr_tenant] = {
           ...tenantsDetails[curr_tenant],
-          result, 
+          result,
         }
       } else {
         newData[curr_tenant] = {
@@ -122,31 +122,31 @@ export default function HomePage() {
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Grid container direction={'column'} spacing={2}>
             <Grid item xs={2} textAlign={"center"}>
-                <ToggleButtonGroup
-                  sx={{ marginTop: '20px' }}
-                  size="small"
-                  color="primary"
-                  value={option}
-                  exclusive
-                  onChange={handleChange}
-                  aria-label="Platform"
-                >
-                  <ToggleButton value="electric">חשמל</ToggleButton>
-                  <ToggleButton value="water">מים</ToggleButton>
-                </ToggleButtonGroup>
+              <ToggleButtonGroup
+                sx={{ marginTop: '20px' }}
+                size="small"
+                color="primary"
+                value={option}
+                exclusive
+                onChange={handleChange}
+                aria-label="Platform"
+              >
+                <ToggleButton value="electric">חשמל</ToggleButton>
+                <ToggleButton value="water">מים</ToggleButton>
+              </ToggleButtonGroup>
             </Grid>
 
             <Grid item xs={10}>
               {
-                option == "electric" ?
-                <ElectricBillForm 
-                  tenantsDetails={electricTenantsDetails}
-                  handleSubmit={handleSubmit}
-                /> :
-                <WaterBillForm 
-                  tenantsDetails={waterTenantsDetails} 
-                  handleSubmit={handleSubmit}
-                />
+                option === "electric" ?
+                  <ElectricBillForm
+                    tenantsDetails={electricTenantsDetails}
+                    handleSubmit={handleSubmit}
+                  /> :
+                  <WaterBillForm
+                    tenantsDetails={waterTenantsDetails}
+                    handleSubmit={handleSubmit}
+                  />
               }
 
             </Grid>

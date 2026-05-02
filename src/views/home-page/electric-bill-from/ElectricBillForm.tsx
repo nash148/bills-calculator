@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -40,7 +40,7 @@ export default function ElectricBillForm(props: IProps) {
   //   for (let curr_tenant of Object.keys(tenantsDetails)) {
   //     const prevBill = data.get(tenantsDetails[curr_tenant].fields[0].name)
   //     const currBill = data.get(tenantsDetails[curr_tenant].fields[1].name)
-  
+
   //     if (prevBill && currBill) {
   //       const result = calculatePerTenant(parseInt(prevBill as string), parseInt(currBill as string))
   //       console.log({ 
@@ -49,7 +49,7 @@ export default function ElectricBillForm(props: IProps) {
   //         curr: currBill,
   //         result: result
   //       })
-        
+
   //       newData[curr_tenant] = {
   //         ...tenantsDetails[curr_tenant],
   //         result, 
@@ -82,14 +82,14 @@ export default function ElectricBillForm(props: IProps) {
       <Typography component="h1" variant="h5">
         חשבון חשמל
       </Typography>
-      <Box 
-        component="form" 
-        noValidate 
-        onSubmit={(e) => handleSubmit(e, "electric")} 
+      <Box
+        component="form"
+        noValidate
+        onSubmit={(e) => handleSubmit(e, "electric")}
         sx={{ mt: 1 }}>
-        <GenericForm 
-          formDetails={tenantsDetails} 
-          // extraField={totalFieldData} 
+        <GenericForm
+          formDetails={tenantsDetails}
+        // extraField={totalFieldData} 
         />
         <Button
           type="submit"

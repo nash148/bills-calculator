@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -25,7 +25,7 @@ export default function WaterBillForm(props: IProps) {
   //   let sumCM: number = currBill - prevBill;
 
   //   if (sumCM <= 0) return 0;
-    
+
   //   if (tenant.numOfPersons > 0) {
   //     const sumOfCheapCM = tenant.numOfPersons * NUM_OF_CHEAP_CM_PER_PERSON
 
@@ -51,7 +51,7 @@ export default function WaterBillForm(props: IProps) {
   //   for (let curr_tenant of Object.keys(tenantsDetails)) {
   //     const prevBill = data.get(tenantsDetails[curr_tenant].fields[0].name)
   //     const currBill = data.get(tenantsDetails[curr_tenant].fields[1].name)
-  
+
   //     if (prevBill && currBill) {
   //       const result = parseInt(calculatePerTenant(
   //         tenantsDetails[curr_tenant], 
@@ -64,7 +64,7 @@ export default function WaterBillForm(props: IProps) {
   //         curr: currBill,
   //         result: result
   //       })
-        
+
   //       newData[curr_tenant] = {
   //         ...tenantsDetails[curr_tenant],
   //         result, 
@@ -96,12 +96,12 @@ export default function WaterBillForm(props: IProps) {
       <Typography component="h1" variant="h5">
         חשבון מים
       </Typography>
-      <Box 
-        component="form" 
-        noValidate 
-        onSubmit={(e) => handleSubmit(e, "water")} 
+      <Box
+        component="form"
+        noValidate
+        onSubmit={(e) => handleSubmit(e, "water")}
         sx={{ mt: 1 }}>
-        <GenericForm 
+        <GenericForm
           formDetails={tenantsDetails}
         />
         <Button
